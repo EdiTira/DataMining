@@ -4,7 +4,7 @@ from results.save_results import save_results
 
 stop_words = make_stop_words()
 
-directory_path = '../Reuters/dataSet/Reuters_7083'
+directory_path = '../DataMining/dataSet/Reuters_7083'
 
 output_file_path = 'output.txt'
 
