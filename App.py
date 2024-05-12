@@ -1,6 +1,6 @@
-from process.process_all_documents import process_all_documents
-from stop_words.make_stop_words import make_stop_words
-from results.save_results import save_results
+from process import process_all_documents
+from stop_words import make_stop_words
+from results import save_results
 
 stop_words = make_stop_words()
 

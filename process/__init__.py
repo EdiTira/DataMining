@@ -1,0 +1,3 @@
+from process.process_all_documents import process_all_documents
+from process.process_document import process_document
+from process.process_text import process_text

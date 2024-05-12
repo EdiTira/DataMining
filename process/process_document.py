@@ -1,4 +1,4 @@
-from process.process_text import process_text
+from process import process_text
 import xml.etree.ElementTree as ET
 
 

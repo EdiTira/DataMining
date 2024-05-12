@@ -1,5 +1,5 @@
 import math
-from entropy.make_word_proportion import make_word_proportion
+from entropy import make_word_proportion
 
 
 def make_entropy(word, total_occurrences):

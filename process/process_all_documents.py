@@ -1,5 +1,5 @@
 import os
-from process.process_document import process_document
+from process import process_document
 from collections import Counter
 
 
