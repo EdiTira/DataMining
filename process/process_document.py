@@ -1,8 +1,8 @@
-from process import process_text
+from process.process_text import process_text
 import xml.etree.ElementTree as ET
 
 
-def process_document(file_path, stop_words):
+def process_document(file_path, stop_words, global_vector, first_topics):
     tree = ET.parse(file_path)
     root = tree.getroot()
 
@@ -12,8 +12,10 @@ def process_document(file_path, stop_words):
 
     combined_text = title + " " + text
 
-    freq_vector = process_text(combined_text, stop_words)
+    freq_vector = process_text(combined_text, stop_words, global_vector)
 
     topics = [elem.attrib['code'] for elem in root.findall(".//codes[@class='bip:topics:1.0']/code")]
+
+    first_topics.append(topics[0])
 
     return freq_vector, topics
