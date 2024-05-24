@@ -13,6 +13,11 @@ def process_text(text, stop_words, global_vector):
         if word not in stop_words and len(word) > 2:
             stemmed_word = stemmer.stem(word)
             stemmed_words.append(stemmed_word)
-            global_vector.add(stemmed_word)
+            if stemmed_word not in global_vector:
+                global_vector.append(stemmed_word)
 
-    return Counter(stemmed_words)
+    rare_vector = {}
+    for word, freq in Counter(stemmed_words).items():
+        rare_vector[global_vector.index(word)] = freq
+
+    return rare_vector

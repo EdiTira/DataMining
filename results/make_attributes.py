@@ -1,4 +1,4 @@
-def make_attributes(global_vector, file):
-    for word in global_vector:
-        file.write(f"@attribute {word}\n")
+def make_attributes(global_vector_with_gains, file):
+    for word, gain in global_vector_with_gains.items():
+        file.write(f"@attribute {word}, {gain}\n")
 

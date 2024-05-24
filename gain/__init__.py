@@ -1,2 +1,2 @@
-from .make_entropy import make_entropy
+from .make_total_entropy import make_total_entropy
 

@@ -1,10 +1,10 @@
 from results import make_attributes, make_data
 
 
-def save_results(documents, global_vector, output_file_path):
+def save_results(documents, global_vector_with_gains, output_file_path):
     with open(output_file_path, 'w') as file:
-        make_attributes(global_vector, file)
+        make_attributes(global_vector_with_gains, file)
 
         file.write("@data\n")
 
-        make_data(documents, global_vector, file)
+        make_data(documents, file)
