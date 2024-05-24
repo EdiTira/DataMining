@@ -15,15 +15,9 @@ def make_gain(documents, global_vector, total_entropy):
             first_topic = document[1][0]
             if global_vector.index(word) in rare_vector:
                 word_appearances += 1
-                if first_topic in topic_freq_exist:
-                    topic_freq_exist[first_topic] += 1
-                else:
-                    topic_freq_exist[first_topic] = 1
+                topic_freq_exist[first_topic] = topic_freq_exist.get(first_topic, 0) + 1
             else:
-                if first_topic in topic_freq_no_exist:
-                    topic_freq_no_exist[first_topic] += 1
-                else:
-                    topic_freq_no_exist[first_topic] = 1
+                topic_freq_no_exist[first_topic] = topic_freq_no_exist.get(first_topic, 0) + 1
 
         word_no_appearances = no_of_documents - word_appearances
 
