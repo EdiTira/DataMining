@@ -1,0 +1,10 @@
+services:
+  reuters:
+    image: python:3
+    tty: true
+    stdin_open: true
+    container_name: reuters.local
+    working_dir: /src/Reuters
+    command: bash -c "pip install -r requirements.txt && python App.py"
+    volumes:
+      - .:/src/Reuters

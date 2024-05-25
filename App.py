@@ -8,7 +8,7 @@ from threshold import apply_threshold
 
 stop_words = make_stop_words()
 
-directory_path = '../DataMining/dataSet/Reuters_34/Training'
+directory_path = '../Reuters/dataSet/Reuters_34/Training'
 
 output_file_path = 'output.txt'
 
