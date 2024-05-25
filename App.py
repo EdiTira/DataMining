@@ -4,6 +4,7 @@ from results import save_results
 from collections import Counter
 from gain.make_total_entropy import make_total_entropy
 from gain.make_gain import make_gain
+from threshold import apply_threshold
 
 stop_words = make_stop_words()
 
@@ -19,4 +20,12 @@ total_entropy = make_total_entropy(freq_first_topics, first_topics)
 
 global_vector_with_gains = make_gain(documents, global_vector, total_entropy)
 
-save_results(documents, global_vector_with_gains, output_file_path)
+threshold = float(input('Enter the threshold: '))
+
+global_vector_with_gains = {word: gain for word, gain in global_vector_with_gains.items() if gain > threshold}
+
+global_vector = list(global_vector_with_gains.keys())
+
+modified_documents = apply_threshold(documents, global_vector)
+
+save_results(modified_documents, global_vector_with_gains, output_file_path)
